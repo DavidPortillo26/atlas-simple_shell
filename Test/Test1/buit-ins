@@ -39,4 +39,13 @@ void builtin(char *s)
 			// Attempt to change to the specified directory and print error if fails
 			printf("bash: cd: %s: No such file or directory\n", args[1]);
 			execFlag = 1;
-		}}}
+		}else
+		{
+			// Strip trailing '/' from directory path if present
+			if(args[1][strlen(args[1]) -1] == '/')
+			{
+				args[1][strlen(args[1]) - 1] = '\0';
+			}
+			execFlag = 1;
+		}
+	}}
