@@ -48,4 +48,14 @@ void builtin(char *s)
 			}
 			execFlag = 1;
 		}
-	}}
+	}
+
+	// Check if the command is 'pwd'
+	else if(strcmp(args[0], "pwd") == 0)
+	{
+		// Get and print the absolute path
+		getcwd(temp, sizeof(temp));
+		printf("%s\n", temp);
+		execFlag = 1;
+	}
+}
