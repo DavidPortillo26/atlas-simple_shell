@@ -58,4 +58,12 @@ void builtin(char *s)
 		printf("%s\n", temp);
 		execFlag = 1;
 	}
-}
+	
+	// Add functionality for 'echo' command
+	else if(strcmp(args[0], "echo") == 0)
+	{
+		c = 0; // Reset counter
+
+		// Loop through the string
+		for(i = 0; i < strlen(s); i++)
+}}
