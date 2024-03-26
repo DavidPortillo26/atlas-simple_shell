@@ -34,6 +34,7 @@ struct node *shell_path(char *path)
 	struct node *head = NULL;
 	struct node *tail = NULL;
 
+	/* parse the path */
 	char *dir = strtok(path, ":");
 
 	while (dir != NULL)
