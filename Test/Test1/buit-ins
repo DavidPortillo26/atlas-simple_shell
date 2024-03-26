@@ -1,1 +1,21 @@
-#include "Main.h"
+#include "main.h"
+
+// Function to execute the built-in commands(cd, pwd, echo)
+void builtin(char *s)
+{
+	// Initialize variables
+	int i = 1;  // Index variable for loops
+	int j;      // Another index variable for loops
+	int c;      // Counter variable
+	int flag = 0; // Flag to track special cases
+
+	// Check if the command is 'cd'
+	if(strcmp(args[0], "cd") == 0)
+	{
+		// Check various cases for changing directories
+		if(args[1] == NULL)
+		{
+			// No directory specified, go back to the current directory
+			chdir(current_directory);
+			execFlag = 1;
+		}}}
