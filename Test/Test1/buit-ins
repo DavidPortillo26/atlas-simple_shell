@@ -66,4 +66,22 @@ void builtin(char *s)
 
 		// Loop through the string
 		for(i = 0; i < strlen(s); i++)
+		{
+		// Check for double quotes
+			if(s[i] == '\"')
+			{
+				// Check if double quotes are properly used
+				if(s[strlen(s) - 1] == '\"')
+				{
+					// Extract and print content within double quotes
+					for(j = i + 1; j < strlen(s) - 1; j++)
+					{
+						cmd_exec[c++] = s[j];
+					}
+					cmd_exec[c] = '\0';
+					flag = 1;
+					printf("%s\n", cmd_exec);
+					execFlag = 1;
+					break;
+				}
 }}
