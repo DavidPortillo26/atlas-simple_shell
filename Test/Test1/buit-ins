@@ -91,3 +91,8 @@ void builtin(char *s)
 					flag = 1;
 				}
 			}
+			// Check for single quotes
+			else if(s[i] == '\'')
+			{
+				// Check if single quotes are properly used
+				if(s[strlen(s) - 1] == '\'')
