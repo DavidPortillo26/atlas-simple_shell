@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 // Function to execute the built-in commands(cd, pwd, echo)
 void builtin(char *s)
