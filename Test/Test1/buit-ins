@@ -66,4 +66,11 @@ void builtin(char *s)
 
 		// Loop through the string
 		for(i = 0; i < strlen(s); i++)
+		{	
+			// Check for double quotes
+			if(s[i] == '\"')
+			{
+				// Check if double quotes are properly used
+				if(s[strlen(s) - 1] == '\"')
+				
 }}
