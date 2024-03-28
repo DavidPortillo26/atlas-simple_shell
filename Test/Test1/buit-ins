@@ -84,3 +84,10 @@ void builtin(char *s)
 					execFlag = 1;
 					break;
 				}
+				else
+				{
+					// Double quotes not properly used, print usage message
+					printf("Usage: echo \"<text to be printed>\"\n");
+					flag = 1;
+				}
+			}
