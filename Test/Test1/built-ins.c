@@ -19,7 +19,7 @@ void builtin(char *s)
 			chdir(current_directory);
 			execFlag = 1;
 		}
-        else if(strcmp(args[1], "~") == 0)
+		else if(strcmp(args[1], "~") == 0)
         {
 			// Tilde specified, go back to the current directory
 			chdir(current_directory);
@@ -45,7 +45,7 @@ void builtin(char *s)
 		else
 		{
 			// Strip trailing '/' from directory path if present
-			if(args[1][strlen(args[1]) -1] == '/')
+			if(args[1][strlen(args[1]) - 1] == '/')
 			{
 				args[1][strlen(args[1]) - 1] = '\0';
 			}
@@ -61,7 +61,7 @@ void builtin(char *s)
 		printf("%s\n", temp);
 		execFlag = 1;
 	}
-	
+
 	// Add functionality for 'echo' command
 	else if(strcmp(args[0], "echo") == 0)
 	{
@@ -119,6 +119,7 @@ void builtin(char *s)
 				}
 			}
 		}
+
 		// If no special cases detected, print arguments as-is
 		if(flag == 0)
 		{
