@@ -13,6 +13,7 @@ int main(void)
 	char *delimiter = " \n";
 	char **array;
 	int k = 0; /*index*/
+	int size_limit = 1024; /*size limit for array*/
 	size_t n = 0; /*size of command*/
 
 	while (1) /*infinite loop*/
@@ -20,6 +21,7 @@ int main(void)
 		write(1, "SimpleShell$ ", 13);
 		getline(&cmd, &n, stdin); /*reads the input*/
 		token = strtok(cmd, delimiter);
+		array = malloc(sizeof(char *) * size_limit) /*array space allocation*/
 
 		while (token != NULL) /*creates an array of tokens*/
 		{
