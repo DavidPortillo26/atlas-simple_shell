@@ -5,31 +5,22 @@
 */
 int main(void)
 {
-	char *cmd, /*command*/ *token = NULL; /*token*/
-	char *delimiter = " \n";
-	char **array;
-	int k = 0; /*index*/
-	int size_limit = 1024; /*size limit for array*/
-	size_t n = 0; /*size of command*/
+	char *mem = NULL; /*data from standard input*/
+	size_t size = 0; /*size of mem from the standard input*/
+	ssize_t data;
+	pid_t processid;
+	int status;
+	bool ispiped = false;
 
 	while (1) /*infinite loop*/
 	{
-		write(1, "SimpleShell$ ", 13);
-		if (getline(&cmd, &n, stdin) == -1) /*if getline fails return -1*/
-			return (-1);
+		if (isatty(STDIN_FILENO) == 0)
+			ispiped = true;
+		/*is the data piped into the func or entered via terminal*/
 
-		token = strtok(cmd, delimiter);
-		array = malloc(sizeof(char *) * size_limit) /*array space allocation*/
+		write(STDOUT_FILENO, "SimpleShell$ ", 13);
+		/*prints the prompt onto the terminal*/
 
-		while (token != NULL) /*creates an array of tokens*/
-		{
-			array[k] = token;
-			token = strtok(cmd, delimiter)
-		}
-
-		if (token != NULL) /*if token doesnt = NULL send into the func cmdline*/
-		{
-			cmdline(token);
-		}
+		data = getline(&mem, &size, stdin); /*reads the data from stdin*/
 	}
 }
