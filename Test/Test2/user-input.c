@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
 /**
  * main - reads the user input
  * Return: success
@@ -19,7 +15,9 @@ int main(void)
 	while (1) /*infinite loop*/
 	{
 		write(1, "SimpleShell$ ", 13);
-		getline(&cmd, &n, stdin); /*reads the input*/
+		if (getline(&cmd, &n, stdin) == -1) /*if getline fails return -1*/
+			return (-1);
+
 		token = strtok(cmd, delimiter);
 		array = malloc(sizeof(char *) * size_limit) /*array space allocation*/
 
