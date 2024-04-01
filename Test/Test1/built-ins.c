@@ -4,8 +4,8 @@
 void builtin(char *s)
 {
 	/* Initialize variables */
-	int i = 1;  /* Index variable for loops */
-	int j;      /* Another index variable for loops */
+	size_t i = 0; /* Index variable for loops */
+	size_t j;      /* Another index variable for loops */
 	int c;      /* Counter variable */
 	int flag = 0; /* Flag to track special cases */
 
