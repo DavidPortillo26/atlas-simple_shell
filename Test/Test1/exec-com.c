@@ -6,12 +6,13 @@ void sigchildHandler(int signal) {
 }
 
 /* Function to execute system commands */
-void execCommand() {
+void execCommand() 
+{
     int status;
     pid_t pid, wpid;
 
     /* Check if the command is to be executed in the background */
-    if (strcmp(args[no_args - 1], "&") == 0) {
+    if (strcmp(no_args[args - 1], "&") == 0) {
         is_bg = 1;
         args[no_args - 1] = NULL;
     }
@@ -21,7 +22,9 @@ void execCommand() {
         fprintf(stderr, "Fork command has failed: %s\n", strerror(errno));
         exit(EXIT_FAILURE);
     } 
-    else if (pid == 0) {  /* Child process */
+    else if (pid == 0) 
+    {  
+        /* Child process */
         /* Reset signal handler to default behavior */
         signal(SIGCHLD, SIG_DFL);
 
@@ -30,3 +33,19 @@ void execCommand() {
             fprintf(stderr, "Command could not be executed: %s\n", strerror(errno));
             exit(EXIT_FAILURE);
         }
+         } else {  // Parent process
+        // Foreground process
+        if (is_bg == 0) {
+            wpid = waitpid(pid, &status, WUNTRACED);
+            while (!WIFEXITED(status) && !WIFSIGNALED(status) && !WIFSTOPPED(status)) {
+                wpid = waitpid(pid, &status, WUNTRACED);
+            }
+        }
+        // Background process
+        else {
+            // Register signal handler for child termination
+            signal(SIGCHLD, sigchildHandler);
+            printf("%d\n", pid); // Print the PID of the background process
+        }
+    }
+}
