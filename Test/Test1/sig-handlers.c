@@ -1,30 +1,28 @@
 #include "main.h"
 
-/* Signal handler for SIGINT (Ctrl+C) signal */
-void sigintHandler(int sig_num)
-{
-    /* Re-register the signal handler to handle subsequent SIGINT signals */
-    signal(SIGINT, sigintHandler);
-    
-    /* Flush stdout to ensure any buffered output is written to the console */
-    fflush(stdout);
-}
-
-/* Signal handler for SIGCHLD (child process termination) signal */
-void sigchildHandler(int sig_num)
+/* Signal handler function for SIGCHLD (child process terminated) */
+/* This function is declared as static to limit its scope to the current source file */
+static void sigchildHandler(int sig_num)
 {
     pid_t cpid; /* Variable to store child process ID */
-    int status; /* Variable to store child process status */
+    int status; /* Variable to store exit status of child process */
 
-    /* Loop until no more terminated child processes are waiting to be reaped */
+    /* Loop until no child process is left */
     while ((cpid = waitpid(-1, &status, WNOHANG)) > 0)
     {
         /* Check if the child process terminated normally */
         if (WIFEXITED(status))
         {
-            /* Print a message indicating that the child process exited normally */
+            /* Print a message indicating the name and PID of the exited process */
             fprintf(stderr, "\n%s with pid %d exited normally\n", args[0], cpid);
         }
     }
-    return;
+    return; /* Exit the signal handler function */
+}
+
+/* Signal handler function for SIGINT (Ctrl+C) */
+void sigintHandler(int sig_num)
+{
+    signal(SIGINT, sigintHandler); /* Reset the signal handler to itself */
+    fflush(stdout); /* Flush the standard output buffer to ensure all output is displayed */
 }

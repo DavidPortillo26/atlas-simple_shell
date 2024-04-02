@@ -30,3 +30,41 @@ char path[1024];
 char cwd[1024];
 char his_var[2000];
 int flag, len;
+
+void check_ls();
+
+void remindme_command();
+
+void clock_command(char *s);
+
+void execCommand();
+
+char* int_to_string(int pid);
+
+void split_cmds();
+
+void split_args(char *s);
+
+void builtin(char *s);
+
+void clear_variables1();
+
+void clear_variables2();
+
+void cust_pwd();
+
+void prompt();
+
+void ls_command();
+
+void lsa_command();
+
+void lsl_command();
+
+void lsal_command();
+
+void pinfo_command();
+
+void sigintHandler(int sig_num);
+
+void alarmHandler(int sig_num);
