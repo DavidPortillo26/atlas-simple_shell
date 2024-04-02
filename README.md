@@ -33,5 +33,5 @@ This shell offers a user-friendly command-line interface with essential features
 FLOW CHART
 
 
-
+![2C45A891-5B51-4D40-B055-D19DB6BB0C78_1_105_c](https://github.com/DavidPortillo26/atlas-simple_shell/assets/144150513/74fffa31-2ee8-4d76-945d-eda95ec075ed)
 
