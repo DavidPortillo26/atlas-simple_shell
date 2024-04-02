@@ -37,9 +37,10 @@ Built-in commands
 - <(login name)@(hostname):(current working directory)>
 .br
 - Example : <Student@Atlas-school:atlas-simple_shell>
+.br
 .B This shell can be executed two different ways
 .br
-.IR Interactive mode
+.IR Interactive .IR mode
 .br
 ./hsh
 .br
@@ -49,7 +50,7 @@ hsh main.c shell.c
 .br
 <Trey@host:~> exit
 .br
-.IR Non-Interactive mode
+.IR Non-Interactive .IR mode
 .br
 echo "/bin/ls" | ./hsh
 .br
