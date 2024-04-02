@@ -1,7 +1,6 @@
 #include "main.h"
-/*
-includes functions to clear/reset variables, generate a custom prompt, and manipulate paths for a custom shell prompt in a C program.
-*/
+
+/* includes functions to clear/reset variables, generate a custom prompt, and manipulate paths for a custom shell prompt in a C program. */
 
 /* Function to clear/reset variables related to command processing */
 void clear_variables1()
