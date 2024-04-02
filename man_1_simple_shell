@@ -30,7 +30,7 @@ Built-in commands
 .SH ENVIRONMENT
 - PATH
 .br
-.sh EXAMPLE
+.SH EXAMPLE
 .br
 .B This shell can be executed two different ways
 .br
