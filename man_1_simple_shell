@@ -34,7 +34,7 @@ Built-in commands
 .br
 .B This shell can be executed two different ways
 .br
-.B Interactive mode
+.B - Interactive mode
 .br
 - <(login name)@(hostname):(current working directory)>
 .br
@@ -48,7 +48,7 @@ hsh main.c shell.c
 .br
 <Trey@host:~> exit
 .br
-.B Non-Interactive mode
+.B - Non-Interactive mode
 .br
 echo "/bin/ls" | ./hsh
 .br
