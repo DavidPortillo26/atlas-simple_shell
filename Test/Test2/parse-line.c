@@ -1,4 +1,7 @@
 #include "main.h"
+
+extern char **environ;
+
 /**
  * tokenize - tokenize the user input
  * @input: user input
@@ -29,7 +32,6 @@ int tokenize(char *input, char *tok[])
 
 char *envir(const char *env)
 {
-	char **environ;
 	int i = 0; /*iterator*/
 	char *token; /*token to hold the environment*/
 
@@ -44,4 +46,33 @@ char *envir(const char *env)
 
 		return (NULL); /*returns null if the env variable is non-existant*/
 	}
+}
+
+/**
+ * getPATH - function to handle the path
+ * @cmd: command passed in
+ * Return: path
+*/
+char *getPATH(char *cmd) /*exec is short for executable*/
+{
+	char *path = envir("PATH"); /*gets the env variables of PATH*/
+	char *token, *command;
+	struct stat status; /*stat is used to find an exec file*/
+
+	token = strtok(path, ":"); /*splits the path using the : as a separator*/
+
+	while (token) /*searches for an exec file*/
+	{
+		command = malloc(strlen(token) + strlen(cmd) + 2);
+		strcpy(command, token);
+		strcat(command. "/");
+		strcat(command, cmd);
+
+		if (stat(command, &status) == 0) /*if the path is exec return it*/
+			return (command);
+		free(command); /*free the path when finished*/
+		token = strtok(NULL, ":");
+	}
+
+	return (NULL); /*return NULL if no executable file is found*/
 }
