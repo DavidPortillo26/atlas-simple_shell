@@ -33,7 +33,7 @@ Built-in commands
 .SH EXAMPLE
 .br
 .B The shell prompt is formatted as follows
- .br
+.br
 - <(login name)@(hostname):(current working directory)>
 .br
 - Example : <Student@Atlas-school:atlas-simple_shell>
