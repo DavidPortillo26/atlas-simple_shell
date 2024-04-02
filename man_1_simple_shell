@@ -40,7 +40,7 @@ Built-in commands
 .br
 .B This shell can be executed two different ways
 .br
-.IR Interactive .IR mode
+.IR Interactive-mode
 .br
 ./hsh
 .br
@@ -50,7 +50,7 @@ hsh main.c shell.c
 .br
 <Trey@host:~> exit
 .br
-.IR Non-Interactive .IR mode
+.IR Non-Interactive-mode
 .br
 echo "/bin/ls" | ./hsh
 .br
