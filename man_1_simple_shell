@@ -32,13 +32,14 @@ Built-in commands
 .br
 .SH EXAMPLE
 .br
-.B This shell can be executed two different ways
-.br
-.IR Interactive mode
-.br
+.B The shell prompt is formatted as follows
+ .br
 - <(login name)@(hostname):(current working directory)>
 .br
 - Example : <Student@Atlas-school:atlas-simple_shell>
+.B This shell can be executed two different ways
+.br
+.IR Interactive mode
 .br
 ./hsh
 .br
