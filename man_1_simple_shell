@@ -1,1 +1,55 @@
-fill in later
+.TH Simple Shell "April 2024" GNU "Shell man page"
+
+.SH NAME
+.B Simple Shell
+- command line interpreter (Shell)
+.SH SYNOPSIS
+To execute the shell run the command ./hsh
+.br
+It will then wait for user input 
+.SH DESCRIPTION
+As a project my partner and I were tasked to create a simplified version of a shell. A shell is a command line interpreter.
+.br
+.B Simple shell abilities
+.br
+- Executes commands with arguments including built-in commands
+.SH BUILT-INS
+Built-in commands
+.br
+- "cd" : change directory
+.br
+- cd "~" : go back to current directory
+.br
+- cd ".." : move up one directory level
+.br
+- cd "." : stay in current directory
+.br
+- "pwd" - prints current working directory
+.br
+- "echo" - prints text, variables, and special characters to the standard output
+.SH ENVIRONMENT
+- PATH
+.sh EXAMPLE
+.B This shell can be executed two different ways
+.br
+.B Interactive mode
+.br
+- <(login name)@(hostname):(current working directory)>
+.br
+- Example : <Student@Atla-sschool:atlas-simple_shell>
+.br
+./hsh
+.br
+<Trey@host:~> /bin/ls
+.br
+hsh main.c shell.c
+.br
+<Trey@host:~> exit
+.br
+.B Non-Interactive mode
+.br
+echo "/bin/ls" | ./hsh
+.br
+hsh main.c shell.c
+.SH AUTHORS
+David Portillo, Treyvon Turner
