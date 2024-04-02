@@ -76,3 +76,32 @@ char *getPATH(char *cmd) /*exec is short for executable*/
 
 	return (NULL); /*return NULL if no executable file is found*/
 }
+
+/**
+ * splitstring - splits a string based on a specific delimiter
+ * @mem: string to split
+ * @delimiter: specific delimiter
+ * Return: token array
+*/
+char **splitstring(char *mem, char *delimiter)
+{
+	char **arroftok; /*holds an array of tokens*/
+	char *tok; /*holds a token*/
+	int i = 0; /*iterator*/
+	int size = 1024; /*size of memory*/
+
+	arroftok = malloc(sizeof(char *) * size); /*allocates mem for token array*/
+	if (arroftok == NULL) /*if mem allocation fails return NULL*/
+		return (NULL);
+	tok = strtok(mem, delimiter); /*splitting the string*/
+
+	while (tok) /*loop through the string until the null terminator*/
+	{
+		arroftok[i] = tok;
+		tok = strtok(NULL, delimiter);
+		i++;
+	}
+	arroftok[i] = NULL; /*set the null terminator*/
+
+	return (arroftok); /*return the split string*/
+}
