@@ -29,14 +29,16 @@ Built-in commands
 - "echo" - prints text, variables, and special characters to the standard output
 .SH ENVIRONMENT
 - PATH
+.br
 .sh EXAMPLE
+.br
 .B This shell can be executed two different ways
 .br
 .B Interactive mode
 .br
 - <(login name)@(hostname):(current working directory)>
 .br
-- Example : <Student@Atla-sschool:atlas-simple_shell>
+- Example : <Student@Atlas-school:atlas-simple_shell>
 .br
 ./hsh
 .br
