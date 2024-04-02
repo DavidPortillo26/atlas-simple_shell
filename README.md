@@ -1,4 +1,4 @@
-#How the shell works by David Portillo
+# Simple Shell
 
 Introduction
 
