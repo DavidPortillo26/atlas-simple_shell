@@ -5,14 +5,28 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <sys/dir.h>
+#include <pwd.h>
+#include <grp.h>
+#include <time.h>
+#include <wait.h>
+#include <ctype.h>
 
 int execFlag;
 int no_args;
 int is_bg;
+int no_cmds;
 char *args[512];
 char current_directory[1000];
 char temp[1024];
 char *cmd_exec;
 char input_buffer[1024];
 char *cmds[512];
-int no_cmds;
+char path[1024];
+char cwd[1024];
+char his_var[2000];
+int flag, len;
